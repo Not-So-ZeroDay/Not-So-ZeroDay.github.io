@@ -11,12 +11,13 @@
       I am&nbsp;<span class="hero-handle">Not0Day</span>
     </h1>
     <p class="hero-subtitle mono">
-      // Penetration Tester &amp; Security Researcher
+      // Security Researcher &amp; Offensive Security Enthusiast
     </p>
     <p class="hero-desc">
-      Exploiting vulnerabilities before adversaries do. Specializing in red team
-      operations, web &amp; network penetration testing, and CTF competitions.
-      Dedicated to turning zero-days into <em class="text-cyan">not-a-problem</em>.
+      Independent security researcher focused on offensive security and
+      cryptographic integrity. Currently mastering the HTB CPTS methodology and
+      developing custom security tools in Python and C++. Certified Ethical
+      Hacker (CEH) with a drive for automated integrity auditing.
     </p>
 
     <div class="hero-cta">
@@ -34,7 +35,7 @@
         <span class="stat-label">Certified</span>
       </div>
       <div class="stat">
-        <span class="stat-value text-cyan">Python</span>
+        <span class="stat-value text-cyan">Python / C++</span>
         <span class="stat-label">Security Tooling</span>
       </div>
     </div>
@@ -163,6 +164,25 @@
     display: flex;
     flex-direction: column;
     gap: 0.2rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    transition: background 0.3s ease-in-out, border-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    cursor: default;
+  }
+
+  .stat:hover {
+    background: #000000;
+    border-color: var(--color-cyan);
+  }
+
+  .stat:hover .stat-value {
+    color: var(--color-cyan);
+    text-shadow: 0 0 8px var(--color-cyan);
+  }
+
+  .stat:hover .stat-label {
+    color: var(--color-cyan);
   }
 
   .stat-value {
