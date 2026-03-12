@@ -36,5 +36,5 @@ npm run preview  # preview production build
 | Contact    | Email, socials, and contact form                 |
 
 ## License
-
+ 
 MIT — © Not0Day
