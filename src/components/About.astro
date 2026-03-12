@@ -1,0 +1,159 @@
+---
+---
+
+<section class="section" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <!-- Left: Text content -->
+      <div class="about-text">
+        <p class="section-label mono text-cyan">// 01. about</p>
+        <h2 class="section-heading">Who is <span class="accent">Not0Day</span>?</h2>
+        <div class="cyan-divider"></div>
+
+        <p>
+          I'm a cybersecurity professional and ethical hacker operating under the
+          handle <strong class="text-cyan">Not0Day</strong>. My work focuses on
+          finding vulnerabilities before they can be weaponized — turning
+          potential zero-days into <em>not-a-problem</em>.
+        </p>
+        <br />
+        <p>
+          With a background in penetration testing, red team operations, and
+          competitive CTF challenges, I bring an offensive mindset to defensive
+          security. I hold certifications including OSCP and CEH, and regularly
+          contribute to the security community through responsible disclosure and
+          open-source tooling.
+        </p>
+        <br />
+        <p>
+          When I'm not hunting bugs or writing exploits, you'll find me mentoring
+          junior security researchers, competing in CTF events worldwide, or
+          publishing in-depth vulnerability writeups on this blog.
+        </p>
+
+        <div class="about-certs">
+          <span class="tag">OSCP</span>
+          <span class="tag">CEH</span>
+          <span class="tag">CompTIA Security+</span>
+          <span class="tag">eWPT</span>
+          <span class="tag">HTB Pro Hacker</span>
+        </div>
+
+        <div class="about-actions">
+          <a href="/resume.pdf" class="btn btn-primary" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download CV
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: Info card -->
+      <div class="about-card card">
+        <div class="info-row">
+          <span class="info-key text-cyan mono">handle</span>
+          <span class="info-val mono">Not0Day</span>
+        </div>
+        <div class="info-row">
+          <span class="info-key text-cyan mono">role</span>
+          <span class="info-val mono">Penetration Tester</span>
+        </div>
+        <div class="info-row">
+          <span class="info-key text-cyan mono">focus</span>
+          <span class="info-val mono">Red Team &amp; Web AppSec</span>
+        </div>
+        <div class="info-row">
+          <span class="info-key text-cyan mono">platform</span>
+          <span class="info-val mono">HackTheBox / TryHackMe</span>
+        </div>
+        <div class="info-row">
+          <span class="info-key text-cyan mono">status</span>
+          <span class="info-val"><span class="status-dot"></span><span class="mono">Available for engagements</span></span>
+        </div>
+        <div class="info-row">
+          <span class="info-key text-cyan mono">location</span>
+          <span class="info-val mono">Remote / Worldwide</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .section-label {
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.5rem;
+    opacity: 0.8;
+    max-width: none;
+  }
+
+  .about-certs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.75rem;
+  }
+
+  .about-actions {
+    margin-top: 1.75rem;
+  }
+
+  /* Info card */
+  .about-card {
+    position: sticky;
+    top: calc(var(--nav-height) + 2rem);
+  }
+
+  .info-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--color-border);
+    font-size: 0.85rem;
+  }
+
+  .info-row:last-child {
+    border-bottom: none;
+  }
+
+  .info-key {
+    font-size: 0.72rem;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+  }
+
+  .info-val {
+    color: var(--color-white-dim);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .status-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #3fb950;
+    box-shadow: 0 0 6px #3fb950;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 900px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .about-card {
+      position: static;
+    }
+  }
+</style>

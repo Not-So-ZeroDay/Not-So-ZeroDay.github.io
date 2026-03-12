@@ -1,0 +1,170 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const posts = [
+  {
+    slug: 'htb-locktalk-writeup',
+    title: 'HTB Cyber Apocalypse 2024 — LockTalk Writeup',
+    date: '2024-03-15',
+    category: 'CTF Writeup',
+    tags: ['JWT', 'SSRF', 'RCE', 'HackTheBox'],
+    excerpt:
+      'Deep-dive into a JWT algorithm confusion attack combined with SSRF for remote code execution on the backend Flask application.',
+  },
+  {
+    slug: 'picoctf-heap3',
+    title: 'PicoCTF 2024 — heap3 Writeup',
+    date: '2024-03-25',
+    category: 'CTF Writeup',
+    tags: ['Heap', 'Binary Exploitation', 'Tcache', 'PicoCTF'],
+    excerpt:
+      'Exploiting a heap overflow vulnerability using tcache poisoning for arbitrary write to achieve code execution.',
+  },
+  {
+    slug: 'defcon-k-smallest',
+    title: 'DEFCON CTF Quals 2024 — k-smallest Writeup',
+    date: '2024-05-20',
+    category: 'CTF Writeup',
+    tags: ['Lattice', 'Cryptography', 'DSA', 'LLL'],
+    excerpt:
+      'Lattice-based attack using LLL reduction to recover a DSA private key from biased nonces in a custom signing oracle.',
+  },
+  {
+    slug: 'htb-rebound',
+    title: 'HTB Rebound — Full Domain Compromise Walkthrough',
+    date: '2024-06-10',
+    category: 'Machine Walkthrough',
+    tags: ['Active Directory', 'Kerberos', 'Windows', 'HackTheBox'],
+    excerpt:
+      'A deep-dive into the Insane-rated Rebound machine: Kerberoasting, cross-forest trust abuse, and shadow credentials to compromise the entire domain.',
+  },
+  {
+    slug: 'google-ctf-gradebook',
+    title: 'Google CTF 2024 — gradebook Writeup',
+    date: '2024-07-01',
+    category: 'CTF Writeup',
+    tags: ['Node.js', 'Prototype Pollution', 'RCE', 'JavaScript'],
+    excerpt:
+      'Chaining prototype pollution with a vm2 sandbox escape for RCE in a Node.js gradebook application.',
+  },
+  {
+    slug: 'htb-logjammer',
+    title: 'HTB Sherlock: Logjammer — Forensics Walkthrough',
+    date: '2024-07-20',
+    category: 'Forensics',
+    tags: ['DFIR', 'Windows', 'Event Logs', 'HackTheBox'],
+    excerpt:
+      'Tracing lateral movement through Windows event logs, identifying the initial access vector, and recovering attacker TTPs.',
+  },
+];
+---
+
+<Layout
+  title="Blog | Not0Day"
+  description="Security research, CTF writeups, and vulnerability analyses by Not0Day."
+>
+  <div class="blog-hero section-alt" style="padding-top: calc(var(--nav-height) + 4rem); padding-bottom: 3rem;">
+    <div class="container">
+      <p class="section-label mono text-cyan">// blog</p>
+      <h1 class="section-heading">Security <span class="accent">Research</span> &amp; Writeups</h1>
+      <div class="cyan-divider"></div>
+      <p class="blog-intro">
+        CTF challenge walkthroughs, machine writeups, vulnerability research, and security tooling
+        deep-dives. All from the offensive perspective of Not0Day.
+      </p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="post-list">
+        {posts.map((post) => (
+          <a href={`/blog/${post.slug}`} class="post-card card">
+            <div class="post-meta">
+              <span class="post-category tag">{post.category}</span>
+              <time class="post-date mono" datetime={post.date}>{post.date}</time>
+            </div>
+            <h2 class="post-title">{post.title}</h2>
+            <p class="post-excerpt">{post.excerpt}</p>
+            <div class="tag-row">
+              {post.tags.map((t) => <span class="tag">{t}</span>)}
+            </div>
+            <span class="post-read-more text-cyan mono">Read writeup →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .section-label {
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.5rem;
+    opacity: 0.8;
+    max-width: none;
+  }
+
+  .blog-intro {
+    max-width: 65ch;
+    color: var(--color-white-dim);
+  }
+
+  .post-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .post-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .post-card:hover {
+    color: inherit;
+  }
+
+  .post-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .post-date {
+    font-size: 0.78rem;
+    color: var(--color-white-muted);
+  }
+
+  .post-title {
+    font-size: 1.15rem;
+    color: var(--color-white);
+    transition: var(--transition);
+  }
+
+  .post-card:hover .post-title {
+    color: var(--color-cyan);
+  }
+
+  .post-excerpt {
+    font-size: 0.875rem;
+    color: var(--color-white-dim);
+    max-width: 70ch;
+    line-height: 1.65;
+  }
+
+  .post-read-more {
+    font-size: 0.82rem;
+    letter-spacing: 0.04em;
+    opacity: 0;
+    transition: var(--transition);
+  }
+
+  .post-card:hover .post-read-more {
+    opacity: 1;
+  }
+</style>
