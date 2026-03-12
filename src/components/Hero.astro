@@ -1,0 +1,261 @@
+---
+---
+
+<section class="hero" id="home">
+  <div class="hero-bg-grid" aria-hidden="true"></div>
+  <div class="container hero-content">
+    <div class="hero-eyebrow mono text-cyan">
+      <span>root@not0day:~$</span><span class="cursor"></span>
+    </div>
+    <h1 class="hero-title">
+      I am&nbsp;<span class="hero-handle">Not0Day</span>
+    </h1>
+    <p class="hero-subtitle mono">
+      // Penetration Tester &amp; Security Researcher
+    </p>
+    <p class="hero-desc">
+      Exploiting vulnerabilities before adversaries do. Specializing in red team
+      operations, web &amp; network penetration testing, and CTF competitions.
+      Dedicated to turning zero-days into <em class="text-cyan">not-a-problem</em>.
+    </p>
+
+    <div class="hero-cta">
+      <a href="/#projects" class="btn btn-primary">View Projects</a>
+      <a href="/#contact"  class="btn btn-outline">Get In Touch</a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-value text-cyan">50+</span>
+        <span class="stat-label">CTF Challenges</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value text-cyan">15+</span>
+        <span class="stat-label">CVEs Researched</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value text-cyan">5+</span>
+        <span class="stat-label">Years Experience</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Decorative terminal window -->
+  <div class="hero-terminal" aria-hidden="true">
+    <div class="terminal-bar">
+      <span class="tb-dot tb-red"></span>
+      <span class="tb-dot tb-yellow"></span>
+      <span class="tb-dot tb-green"></span>
+      <span class="tb-title">not0day@kali: ~</span>
+    </div>
+    <div class="terminal-body">
+      <p><span class="t-prompt">not0day@kali</span><span class="t-sep">:</span><span class="t-path">~</span><span class="t-dollar">$</span> whoami</p>
+      <p class="t-output">not0day</p>
+      <p><span class="t-prompt">not0day@kali</span><span class="t-sep">:</span><span class="t-path">~</span><span class="t-dollar">$</span> cat /etc/skills</p>
+      <p class="t-output">[ pentesting, red-team, ctf, osint, re ]</p>
+      <p><span class="t-prompt">not0day@kali</span><span class="t-sep">:</span><span class="t-path">~</span><span class="t-dollar">$</span> nmap -sV target.io</p>
+      <p class="t-output">Starting Nmap 7.95...</p>
+      <p class="t-output">PORT&nbsp;&nbsp;&nbsp;&nbsp; STATE SERVICE VERSION</p>
+      <p class="t-output t-found">22/tcp &nbsp; open &nbsp; ssh &nbsp;&nbsp;&nbsp; OpenSSH 9.2</p>
+      <p class="t-output t-found">80/tcp &nbsp; open &nbsp; http &nbsp;&nbsp; nginx 1.25</p>
+      <p class="t-output t-found">443/tcp  open &nbsp; https &nbsp; nginx 1.25</p>
+      <p><span class="t-prompt">not0day@kali</span><span class="t-sep">:</span><span class="t-path">~</span><span class="t-dollar">$</span><span class="cursor"></span></p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-top: var(--nav-height);
+    overflow: hidden;
+  }
+
+  /* Subtle grid background */
+  .hero-bg-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0, 255, 255, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+    mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%);
+  }
+
+  .container.hero-content {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+  }
+
+  /* Left column spans all except terminal */
+  .hero-eyebrow,
+  .hero-title,
+  .hero-subtitle,
+  .hero-desc,
+  .hero-cta,
+  .hero-stats {
+    grid-column: 1;
+  }
+
+  .hero-terminal {
+    grid-column: 2;
+    grid-row: 1 / 7;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    color: var(--color-cyan);
+    margin-bottom: 0.75rem;
+    opacity: 0.85;
+  }
+
+  .hero-title {
+    font-size: clamp(2.4rem, 5.5vw, 3.8rem);
+    margin-bottom: 0.5rem;
+    line-height: 1.1;
+  }
+
+  .hero-handle {
+    color: var(--color-cyan);
+    text-shadow: var(--glow-cyan);
+  }
+
+  .hero-subtitle {
+    font-size: 1.05rem;
+    color: var(--color-white-muted);
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-desc {
+    font-size: 1rem;
+    color: var(--color-white-dim);
+    max-width: 48ch;
+    margin-bottom: 2rem;
+    line-height: 1.75;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+  }
+
+  /* Stats */
+  .hero-stats {
+    display: flex;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+  }
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .stat-value {
+    font-family: var(--font-mono);
+    font-size: 1.75rem;
+    font-weight: 700;
+    text-shadow: var(--glow-cyan-sm);
+  }
+
+  .stat-label {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--color-white-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+  }
+
+  /* Terminal decorative card */
+  .hero-terminal {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow-card), 0 0 40px rgba(0, 255, 255, 0.06);
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    align-self: center;
+  }
+
+  .terminal-bar {
+    background: #1a2230;
+    padding: 0.65rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .tb-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+
+  .tb-red    { background: #ff5f57; }
+  .tb-yellow { background: #ffbd2e; }
+  .tb-green  { background: #28c840; }
+
+  .tb-title {
+    margin-left: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--color-white-muted);
+  }
+
+  .terminal-body {
+    padding: 1.25rem 1.25rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    line-height: 1.6;
+  }
+
+  .terminal-body p {
+    margin: 0;
+    max-width: none;
+  }
+
+  .t-prompt { color: #7ee787; }
+  .t-sep    { color: var(--color-white-muted); }
+  .t-path   { color: #79c0ff; }
+  .t-dollar { color: var(--color-white-dim); margin: 0 0.4rem; }
+  .t-output { color: var(--color-white-dim); padding-left: 0; }
+  .t-found  { color: var(--color-cyan); }
+
+  @media (max-width: 900px) {
+    .container.hero-content {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .hero-terminal {
+      grid-column: 1;
+      grid-row: auto;
+    }
+
+    .hero-eyebrow,
+    .hero-title,
+    .hero-subtitle,
+    .hero-desc,
+    .hero-cta,
+    .hero-stats {
+      grid-column: 1;
+    }
+  }
+</style>
