@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "astro build --no-telemetry",
     "preview": "astro preview",
     "astro": "astro"
   },
