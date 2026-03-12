@@ -16,7 +16,8 @@ import Layout from '../../layouts/Layout.astro';
       <div class="lab-grid">
         <a href="/htb/cpts" class="lab-module card">
           <span class="mod-id mono">01</span>
-          <h3 class="mod-name">CPTS</h3>
+          <h3 class="mod-name">CPTS Path</h3>
+          <p class="mod-desc">Certified Penetration Testing Specialist (28 Modules)</p>
           <div class="mod-footer">
             <span class="mod-status mono">[ ENTER ]</span>
           </div>
@@ -90,6 +91,13 @@ import Layout from '../../layouts/Layout.astro';
 
   .lab-module:hover .mod-name {
     color: var(--color-cyan);
+  }
+
+  .mod-desc {
+    font-size: 0.78rem;
+    color: var(--color-white-dim);
+    line-height: 1.5;
+    margin: 0;
   }
 
   .mod-footer {
