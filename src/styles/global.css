@@ -128,7 +128,7 @@ p {
 }
 
 .section-heading .accent {
-  color: var(--color-cyan);
+  color: var(--color-white);
 }
 
 .section-subheading {
@@ -184,7 +184,7 @@ p {
 
 .btn-outline {
   background: transparent;
-  color: var(--color-cyan);
+  color: var(--color-white);
   border: 1.5px solid var(--color-cyan);
 }
 
@@ -208,7 +208,6 @@ p {
 }
 
 .card:hover {
-  background: var(--color-bg-card-hover);
   border-color: var(--color-cyan);
   box-shadow: var(--shadow-card), 0 0 20px rgba(0, 255, 255, 0.15);
   transform: translateY(-3px);
