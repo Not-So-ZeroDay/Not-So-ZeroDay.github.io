@@ -1,4 +1,34 @@
 ---
+const modules = [
+  { id: '01', name: 'Pentest-Process' },
+  { id: '02', name: 'Getting-Started' },
+  { id: '03', name: 'Network-Enumeration-Nmap' },
+  { id: '04', name: 'Footprinting' },
+  { id: '05', name: 'Info-Gathering-Web' },
+  { id: '06', name: 'Vulnerability-Assessment' },
+  { id: '07', name: 'File-Transfers' },
+  { id: '08', name: 'Shells-Payloads' },
+  { id: '09', name: 'Metasploit-Framework' },
+  { id: '10', name: 'Password-Attacks' },
+  { id: '11', name: 'Attacking-Common-Services' },
+  { id: '12', name: 'Pivoting-Tunneling' },
+  { id: '13', name: 'AD-Enumeration-Attacks' },
+  { id: '14', name: 'Using-Web-Proxies' },
+  { id: '15', name: 'Attacking-Web-with-Ffuf' },
+  { id: '16', name: 'Login-Brute-Forcing' },
+  { id: '17', name: 'SQL-Injection-Fundamentals' },
+  { id: '18', name: 'SQLMap-Essentials' },
+  { id: '19', name: 'XSS' },
+  { id: '20', name: 'File-Inclusion' },
+  { id: '21', name: 'File-Upload-Attacks' },
+  { id: '22', name: 'Command-Injections' },
+  { id: '23', name: 'Web-Attacks' },
+  { id: '24', name: 'Attacking-Common-Apps' },
+  { id: '25', name: 'Linux-PrivEsc' },
+  { id: '26', name: 'Windows-PrivEsc' },
+  { id: '27', name: 'Documentation-Reporting' },
+  { id: '28', name: 'Attacking-Enterprise-Networks' },
+];
 ---
 
 <section class="section section-alt" id="lab">
@@ -7,31 +37,42 @@
     <h2 class="section-heading">The Research <span class="accent">Lab</span></h2>
     <div class="cyan-divider"></div>
     <p class="section-subheading">
-      Ongoing research, technical documentation, and offensive security tooling.
+      HTB CPTS path — technical documentation, notes, and offensive security research.
     </p>
 
-    <div class="lab-card card">
-      <div class="lab-card-header">
-        <div class="lab-badge">Coming Soon</div>
-      </div>
-      <div class="lab-terminal">
-        <div class="terminal-bar">
-          <span class="tb-dot tb-red"></span>
-          <span class="tb-dot tb-yellow"></span>
-          <span class="tb-dot tb-green"></span>
-          <span class="tb-title">not0day@lab: ~/research</span>
+    <div class="lab-grid">
+      {modules.map((mod) => (
+        <article class="lab-module card">
+          <span class="mod-id mono">{mod.id}</span>
+          <h3 class="mod-name">{mod.name.replace(/-/g, ' ')}</h3>
+          <div class="mod-footer">
+            <span class="mod-status mono">[ IN_PROGRESS ]</span>
+          </div>
+        </article>
+      ))}
+
+      <!-- Expansion placeholders -->
+      <article class="lab-module lab-expansion card">
+        <span class="mod-id mono">—</span>
+        <h3 class="mod-name exp-name">Expansion Slot</h3>
+        <div class="mod-footer">
+          <span class="mod-status mono">[ ACCESS_RESTRICTED ]</span>
         </div>
-        <div class="terminal-body">
-          <p>
-            <span class="t-prompt">not0day@lab</span><span class="t-sep">:</span><span class="t-path">~/research</span><span class="t-dollar">$</span>
-            cat status.txt
-          </p>
-          <p class="t-status">[ STATUS: IN_PROGRESS ] - "Technical documentation for the HTB CPTS path is currently being processed."</p>
-          <p>
-            <span class="t-prompt">not0day@lab</span><span class="t-sep">:</span><span class="t-path">~/research</span><span class="t-dollar">$</span><span class="cursor"></span>
-          </p>
+      </article>
+      <article class="lab-module lab-expansion card">
+        <span class="mod-id mono">—</span>
+        <h3 class="mod-name exp-name">Expansion Slot</h3>
+        <div class="mod-footer">
+          <span class="mod-status mono">[ MORE_TO_COME ]</span>
         </div>
-      </div>
+      </article>
+      <article class="lab-module lab-expansion card">
+        <span class="mod-id mono">—</span>
+        <h3 class="mod-name exp-name">Expansion Slot</h3>
+        <div class="mod-footer">
+          <span class="mod-status mono">[ MORE_TO_COME ]</span>
+        </div>
+      </article>
     </div>
   </div>
 </section>
@@ -45,85 +86,80 @@
     max-width: none;
   }
 
-  .lab-card {
-    max-width: 700px;
+  .lab-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.25rem;
   }
 
-  .lab-card-header {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 1.25rem;
-  }
-
-  .lab-badge {
-    font-family: var(--font-mono);
-    font-size: 0.72rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: #000000;
-    background: var(--color-cyan);
-    border: 1px solid var(--color-cyan);
-    box-shadow: 0 0 8px var(--color-cyan-muted);
-    padding: 0.25rem 0.75rem;
-    border-radius: 2px;
-  }
-
-  .lab-terminal {
-    background: var(--color-bg-card);
-    border: 1px solid var(--color-border);
-    border-radius: 6px;
-    overflow: hidden;
-    font-family: var(--font-mono);
-    font-size: 0.84rem;
-  }
-
-  .terminal-bar {
-    background: #1a2230;
-    padding: 0.65rem 1rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    border-bottom: 1px solid var(--color-border);
-  }
-
-  .tb-dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-  }
-
-  .tb-red    { background: #ff5f57; }
-  .tb-yellow { background: #ffbd2e; }
-  .tb-green  { background: #28c840; }
-
-  .tb-title {
-    margin-left: 0.5rem;
-    font-family: var(--font-mono);
-    font-size: 0.78rem;
-    color: var(--color-white-muted);
-  }
-
-  .terminal-body {
-    padding: 1.25rem 1.25rem 1.5rem;
+  .lab-module {
     display: flex;
     flex-direction: column;
-    gap: 0.35rem;
-    line-height: 1.6;
+    gap: 0.5rem;
+    padding: 1.25rem 1.4rem;
+    transition: var(--transition);
   }
 
-  .terminal-body p {
-    margin: 0;
-    max-width: none;
+  .lab-module:hover {
+    background: var(--color-bg-card-hover);
+    border-color: var(--color-cyan);
+    box-shadow: 0 0 16px rgba(0, 255, 255, 0.2);
+    transform: translateY(-3px);
   }
 
-  .t-prompt { color: #7ee787; }
-  .t-sep    { color: var(--color-white-muted); }
-  .t-path   { color: #79c0ff; }
-  .t-dollar { color: var(--color-white-dim); margin: 0 0.4rem; }
-  .t-status {
+  .mod-id {
+    font-size: 0.7rem;
     color: var(--color-cyan);
-    text-shadow: var(--glow-cyan-sm);
-    padding-left: 0;
+    letter-spacing: 0.1em;
+    transition: var(--transition);
+  }
+
+  .lab-module:hover .mod-id {
+    color: var(--color-cyan);
+  }
+
+  .mod-name {
+    font-family: var(--font-mono);
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--color-white);
+    line-height: 1.4;
+    transition: var(--transition);
+  }
+
+  .lab-module:hover .mod-name {
+    color: var(--color-cyan);
+  }
+
+  .mod-footer {
+    margin-top: auto;
+    padding-top: 0.75rem;
+  }
+
+  .mod-status {
+    font-size: 0.68rem;
+    color: var(--color-white-muted);
+    letter-spacing: 0.05em;
+    transition: var(--transition);
+  }
+
+  .lab-module:hover .mod-status {
+    color: var(--color-cyan-dim);
+  }
+
+  .lab-expansion .mod-id,
+  .lab-expansion .exp-name {
+    opacity: 0.4;
+  }
+
+  .lab-expansion:hover .mod-id,
+  .lab-expansion:hover .exp-name {
+    opacity: 1;
+  }
+
+  @media (max-width: 600px) {
+    .lab-grid {
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    }
   }
 </style>
