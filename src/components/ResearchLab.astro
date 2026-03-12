@@ -1,0 +1,129 @@
+---
+---
+
+<section class="section section-alt" id="lab">
+  <div class="container">
+    <p class="section-label mono text-cyan">// 04. research lab</p>
+    <h2 class="section-heading">The Research <span class="accent">Lab</span></h2>
+    <div class="cyan-divider"></div>
+    <p class="section-subheading">
+      Ongoing research, technical documentation, and offensive security tooling.
+    </p>
+
+    <div class="lab-card card">
+      <div class="lab-card-header">
+        <div class="lab-badge">Coming Soon</div>
+      </div>
+      <div class="lab-terminal">
+        <div class="terminal-bar">
+          <span class="tb-dot tb-red"></span>
+          <span class="tb-dot tb-yellow"></span>
+          <span class="tb-dot tb-green"></span>
+          <span class="tb-title">not0day@lab: ~/research</span>
+        </div>
+        <div class="terminal-body">
+          <p>
+            <span class="t-prompt">not0day@lab</span><span class="t-sep">:</span><span class="t-path">~/research</span><span class="t-dollar">$</span>
+            cat status.txt
+          </p>
+          <p class="t-status">[ STATUS: IN_PROGRESS ] - "Technical documentation for the HTB CPTS path is currently being processed."</p>
+          <p>
+            <span class="t-prompt">not0day@lab</span><span class="t-sep">:</span><span class="t-path">~/research</span><span class="t-dollar">$</span><span class="cursor"></span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .section-label {
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.5rem;
+    opacity: 0.8;
+    max-width: none;
+  }
+
+  .lab-card {
+    max-width: 700px;
+  }
+
+  .lab-card-header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1.25rem;
+  }
+
+  .lab-badge {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #000000;
+    background: var(--color-cyan);
+    border: 1px solid var(--color-cyan);
+    box-shadow: 0 0 8px var(--color-cyan-muted);
+    padding: 0.25rem 0.75rem;
+    border-radius: 2px;
+  }
+
+  .lab-terminal {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    overflow: hidden;
+    font-family: var(--font-mono);
+    font-size: 0.84rem;
+  }
+
+  .terminal-bar {
+    background: #1a2230;
+    padding: 0.65rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .tb-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+
+  .tb-red    { background: #ff5f57; }
+  .tb-yellow { background: #ffbd2e; }
+  .tb-green  { background: #28c840; }
+
+  .tb-title {
+    margin-left: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--color-white-muted);
+  }
+
+  .terminal-body {
+    padding: 1.25rem 1.25rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    line-height: 1.6;
+  }
+
+  .terminal-body p {
+    margin: 0;
+    max-width: none;
+  }
+
+  .t-prompt { color: #7ee787; }
+  .t-sep    { color: var(--color-white-muted); }
+  .t-path   { color: #79c0ff; }
+  .t-dollar { color: var(--color-white-dim); margin: 0 0.4rem; }
+  .t-status {
+    color: var(--color-cyan);
+    text-shadow: var(--glow-cyan-sm);
+    padding-left: 0;
+  }
+</style>
