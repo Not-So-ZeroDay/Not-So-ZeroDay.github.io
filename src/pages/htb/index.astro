@@ -1,28 +1,46 @@
 ---
+import Layout from '../../layouts/Layout.astro';
 ---
 
-<section class="section section-alt" id="lab">
-  <div class="container">
-    <p class="section-label mono">// 04. research lab</p>
-    <h2 class="section-heading">The Research <span class="accent">Lab</span></h2>
-    <div class="cyan-divider"></div>
-    <p class="section-subheading">
-      HTB CPTS path — technical documentation, notes, and offensive security research.
-    </p>
+<Layout title="HTB Writeups | Not0Day" description="HackTheBox writeups and penetration testing documentation.">
+  <section class="section" id="htb">
+    <div class="container">
+      <a href="/" class="back-link mono">← Back to Home</a>
+      <p class="section-label mono">// htb writeups</p>
+      <h2 class="section-heading">HTB <span class="accent">Writeups</span></h2>
+      <div class="cyan-divider"></div>
+      <p class="section-subheading">
+        HackTheBox learning paths — select a category to explore writeups and research notes.
+      </p>
 
-    <div class="lab-grid">
-      <a href="/htb" class="lab-module card">
-        <span class="mod-id mono">01</span>
-        <h3 class="mod-name">HTB Writeups</h3>
-        <div class="mod-footer">
-          <span class="mod-status mono">[ ENTER ]</span>
-        </div>
-      </a>
+      <div class="lab-grid">
+        <a href="/htb/cpts" class="lab-module card">
+          <span class="mod-id mono">01</span>
+          <h3 class="mod-name">CPTS</h3>
+          <div class="mod-footer">
+            <span class="mod-status mono">[ ENTER ]</span>
+          </div>
+        </a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+</Layout>
 
 <style>
+  .back-link {
+    display: inline-block;
+    font-size: 0.8rem;
+    color: var(--color-cyan);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    margin-bottom: 1.5rem;
+    transition: var(--transition);
+  }
+
+  .back-link:hover {
+    color: var(--color-white);
+  }
+
   .section-label {
     font-size: 0.8rem;
     letter-spacing: 0.08em;
@@ -59,10 +77,6 @@
     color: var(--color-cyan);
     letter-spacing: 0.1em;
     transition: var(--transition);
-  }
-
-  .lab-module:hover .mod-id {
-    color: var(--color-cyan);
   }
 
   .mod-name {

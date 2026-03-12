@@ -1,0 +1,181 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+const modules = [
+  { id: '01', name: 'Pentest-Process' },
+  { id: '02', name: 'Getting-Started' },
+  { id: '03', name: 'Network-Enumeration-Nmap' },
+  { id: '04', name: 'Footprinting' },
+  { id: '05', name: 'Info-Gathering-Web' },
+  { id: '06', name: 'Vulnerability-Assessment' },
+  { id: '07', name: 'File-Transfers' },
+  { id: '08', name: 'Shells-Payloads' },
+  { id: '09', name: 'Metasploit-Framework' },
+  { id: '10', name: 'Password-Attacks' },
+  { id: '11', name: 'Attacking-Common-Services' },
+  { id: '12', name: 'Pivoting-Tunneling' },
+  { id: '13', name: 'AD-Enumeration-Attacks' },
+  { id: '14', name: 'Using-Web-Proxies' },
+  { id: '15', name: 'Attacking-Web-with-Ffuf' },
+  { id: '16', name: 'Login-Brute-Forcing' },
+  { id: '17', name: 'SQL-Injection-Fundamentals' },
+  { id: '18', name: 'SQLMap-Essentials' },
+  { id: '19', name: 'XSS' },
+  { id: '20', name: 'File-Inclusion' },
+  { id: '21', name: 'File-Upload-Attacks' },
+  { id: '22', name: 'Command-Injections' },
+  { id: '23', name: 'Web-Attacks' },
+  { id: '24', name: 'Attacking-Common-Apps' },
+  { id: '25', name: 'Linux-PrivEsc' },
+  { id: '26', name: 'Windows-PrivEsc' },
+  { id: '27', name: 'Documentation-Reporting' },
+  { id: '28', name: 'Attacking-Enterprise-Networks' },
+];
+---
+
+<Layout title="CPTS | HTB Writeups | Not0Day" description="HTB CPTS path — technical documentation, notes, and offensive security research.">
+  <section class="section" id="cpts">
+    <div class="container">
+      <a href="/htb" class="back-link mono">← Back to HTB</a>
+      <p class="section-label mono">// htb / cpts</p>
+      <h2 class="section-heading">CPTS <span class="accent">Progress</span></h2>
+      <div class="cyan-divider"></div>
+      <p class="section-subheading">
+        HTB CPTS path — technical documentation, notes, and offensive security research.
+      </p>
+
+      <div class="lab-grid">
+        {modules.map((mod) => (
+          <article class="lab-module card">
+            <span class="mod-id mono">{mod.id}</span>
+            <h3 class="mod-name">{mod.name.replace(/-/g, ' ')}</h3>
+            <div class="mod-footer">
+              <span class="mod-status mono">[ IN_PROGRESS ]</span>
+            </div>
+          </article>
+        ))}
+
+        <!-- Expansion placeholders -->
+        <article class="lab-module lab-expansion card">
+          <span class="mod-id mono">—</span>
+          <h3 class="mod-name exp-name">Expansion Slot</h3>
+          <div class="mod-footer">
+            <span class="mod-status mono">[ ACCESS_RESTRICTED ]</span>
+          </div>
+        </article>
+        <article class="lab-module lab-expansion card">
+          <span class="mod-id mono">—</span>
+          <h3 class="mod-name exp-name">Expansion Slot</h3>
+          <div class="mod-footer">
+            <span class="mod-status mono">[ MORE_TO_COME ]</span>
+          </div>
+        </article>
+        <article class="lab-module lab-expansion card">
+          <span class="mod-id mono">—</span>
+          <h3 class="mod-name exp-name">Expansion Slot</h3>
+          <div class="mod-footer">
+            <span class="mod-status mono">[ MORE_TO_COME ]</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .back-link {
+    display: inline-block;
+    font-size: 0.8rem;
+    color: var(--color-cyan);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    margin-bottom: 1.5rem;
+    transition: var(--transition);
+  }
+
+  .back-link:hover {
+    color: var(--color-white);
+  }
+
+  .section-label {
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.5rem;
+    opacity: 0.8;
+    max-width: none;
+    color: var(--color-white-muted);
+  }
+
+  .lab-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .lab-module {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1.25rem 1.4rem;
+    transition: var(--transition);
+  }
+
+  .lab-module:hover {
+    background: var(--color-bg-card-hover);
+    border-color: var(--color-cyan);
+    box-shadow: 0 0 16px rgba(0, 255, 255, 0.2);
+    transform: translateY(-3px);
+  }
+
+  .mod-id {
+    font-size: 0.7rem;
+    color: var(--color-cyan);
+    letter-spacing: 0.1em;
+    transition: var(--transition);
+  }
+
+  .mod-name {
+    font-family: var(--font-mono);
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--color-white);
+    line-height: 1.4;
+    transition: var(--transition);
+  }
+
+  .lab-module:hover .mod-name {
+    color: var(--color-cyan);
+  }
+
+  .mod-footer {
+    margin-top: auto;
+    padding-top: 0.75rem;
+  }
+
+  .mod-status {
+    font-size: 0.68rem;
+    color: var(--color-white-muted);
+    letter-spacing: 0.05em;
+    transition: var(--transition);
+  }
+
+  .lab-module:hover .mod-status {
+    color: var(--color-cyan-dim);
+  }
+
+  .lab-expansion .mod-id,
+  .lab-expansion .exp-name {
+    opacity: 0.4;
+  }
+
+  .lab-expansion:hover .mod-id,
+  .lab-expansion:hover .exp-name {
+    opacity: 1;
+  }
+
+  @media (max-width: 600px) {
+    .lab-grid {
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    }
+  }
+</style>
